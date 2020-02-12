@@ -3,12 +3,12 @@ using System.Linq;
 
 namespace QuickBuy.dominio.Entidades
 {
-  public abstract class Entidade
+    public abstract class Entidade
     {
         public List<string> _mensagensValidacao { get; set; }
         public List<string> MensagemValidacao
         {
-            get { return _mensagensValidacao ?? (_mensagensValidacao = new List<string>());  } // Verifica se a lista mensg está vazio, e retorna uma estância, mesmo estando vazia 
+            get { return _mensagensValidacao ?? (_mensagensValidacao = new List<string>()); } // Verifica se a lista mensg está vazio, e retorna uma estância, mesmo estando vazia 
         }
 
         protected void LimparMensagensValidacao()

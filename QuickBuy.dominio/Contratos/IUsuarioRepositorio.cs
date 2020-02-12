@@ -1,4 +1,5 @@
-﻿using QuickBuy.dominio.Entidades;
+﻿
+using QuickBuy.dominio.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Text;

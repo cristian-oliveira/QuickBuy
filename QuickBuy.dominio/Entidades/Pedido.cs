@@ -8,12 +8,12 @@ namespace QuickBuy.dominio.Entidades
     public class Pedido : Entidade
     {
         public int Id { get; set; }
-        public DateTime DataPedido  { get; set; }
+        public DateTime DataPedido { get; set; }
         public int UsuarioId { get; set; }
 
         public virtual Usuario Usuario { get; set; }
         public ICollection<ItemPedido> ItensPedidos { get; set; }
-        public DateTime DataPrevisaoEntrega { get; set; } 
+        public DateTime DataPrevisaoEntrega { get; set; }
         public string CEP { get; set; }
         public string Estado { get; set; }
         public string Cidade { get; set; }
@@ -25,11 +25,11 @@ namespace QuickBuy.dominio.Entidades
         {
             LimparMensagensValidacao();
 
-            if (!ItensPedidos.Any()) 
+            if (!ItensPedidos.Any())
             {
-              AdicionarMensagem("PEDIDO NÃO PODE FICAR SEM ITENS!");
+                AdicionarMensagem("PEDIDO NÃO PODE FICAR SEM ITENS!");
 
-            if (string.IsNullOrEmpty(CEP))
+                if (string.IsNullOrEmpty(CEP))
                 {
                     AdicionarMensagem("CEP NÃO PODE FICAR VAZIO!");
                 }
@@ -37,4 +37,4 @@ namespace QuickBuy.dominio.Entidades
 
         }
     }
- }
+}
