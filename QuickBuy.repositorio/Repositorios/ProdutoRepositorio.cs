@@ -23,12 +23,12 @@ namespace QuickBuy.repositorio.Repositorios
             throw new NotImplementedException();
         }
 
-        Pedido IBaseRepositorio<Pedido>.ObterPorId(int id)
+        public Pedido ObterPorId(int id)
         {
             throw new NotImplementedException();
         }
 
-        IEnumerable<Pedido> IBaseRepositorio<Pedido>.ObterTodos()
+        public IEnumerable<Pedido> ObterTodos()
         {
             throw new NotImplementedException();
         }
