@@ -22,15 +22,5 @@ namespace QuickBuy.repositorio.Repositorios
         {
             throw new NotImplementedException();
         }
-
-        public Pedido ObterPorId(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Pedido> ObterTodos()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

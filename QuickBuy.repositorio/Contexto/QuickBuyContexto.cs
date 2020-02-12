@@ -2,6 +2,8 @@
 using QuickBuy.dominio.Entidades;
 using QuickBuy.dominio.Entidades.ObjetoDeValor;
 using QuickBuy.repositorio.Config;
+using System.Data.Entity;
+using DbContext = Microsoft.EntityFrameworkCore.DbContext;
 
 namespace QuickBuy.repositorio.Contexto
 {
@@ -13,11 +15,11 @@ namespace QuickBuy.repositorio.Contexto
 
         }
 
-        public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<dominio.Entidades.ObjetoDeValor.FormaPagamento>  FormaPagamento { get; set; }
-        public DbSet<Pedido> Pedidos { get; set; }
-        public DbSet<Produto>  Produtos { get; set; }
-        public DbSet<ItemPedido> ItensPedidos { get; set; }
+        public System.Data.Entity.DbSet<Usuario> Usuarios { get; set; }
+        public System.Data.Entity.DbSet<FormaPagamento> FormaPagamento { get; set; }
+        public System.Data.Entity.DbSet<Pedido> Pedidos { get; set; }
+        public System.Data.Entity.DbSet<Produto>  Produtos { get; set; }
+        public System.Data.Entity.DbSet<ItemPedido> ItensPedidos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
