@@ -10,7 +10,6 @@ namespace QuickBuy.repositorio.Config
 
         public void Configure(EntityTypeBuilder<FormaPagamento> builder)
         {
-            throw new System.NotImplementedException();
         }
     }
 }

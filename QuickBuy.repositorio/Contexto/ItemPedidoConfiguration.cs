@@ -7,7 +7,6 @@ namespace QuickBuy.repositorio.Contexto
     {
         public void Configure(EntityTypeBuilder<object> builder)
         {
-            throw new System.NotImplementedException();
         }
     }
 }
