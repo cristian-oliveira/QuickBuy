@@ -13,11 +13,13 @@ namespace QuickBuy.repositorio.Config
             builder.Property(pedido => pedido.Estado).IsRequired().HasMaxLength(50);
             builder.Property(pedido => pedido.Cidade).IsRequired().HasMaxLength(50);
             builder.Property(pedido => pedido.NumeroEndereco).IsRequired().HasMaxLength(10);
-            //builder.Property(pedido => pedido.FormaPagamento).IsRequired().HasMaxLength(500);
-            //builder.Property(pedido => pedido.FormaPagementoId).IsRequired().HasMaxLength(500);
+            //builder.Property(pedido => pedido.FormaPagamento).IsRequired();
+ 
             builder.Property(pedido => pedido.DataPedido).IsRequired();
             //builder.Property(pedido => pedido.UsuarioId).IsRequired().HasMaxLength(500);
             builder.Property(pedido => pedido.DataPrevisaoEntrega).IsRequired();
+
+            builder.HasOne(pedido => pedido.Usuario);
         }
     }
 }

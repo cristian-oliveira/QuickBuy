@@ -15,7 +15,13 @@ namespace QuickBuy.dominio.Entidades
 
         public override void Validate()
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(Email))
+            {
+                MyString mensagemErro = new MyString("PEDIDO NÃO PODE FICAR SEM ITENS!");
+                AdicionarMensagem(mensagemErro);
+            }
+
+
         }
     }
 }
