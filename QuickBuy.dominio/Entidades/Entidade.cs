@@ -5,7 +5,7 @@ namespace QuickBuy.dominio.Entidades
 {
     public abstract class Entidade
     {
-        public List<MyString> _mensagensValidacao { get; set; }
+        public virtual List<MyString> _mensagensValidacao { get; set; }
         protected List<MyString> MensagemValidacao
         {
             get { return _mensagensValidacao ?? (_mensagensValidacao = new List<MyString>()); } // Verifica se a lista mensg está vazio, e retorna uma estância, mesmo estando vazia 
