@@ -23,6 +23,8 @@ namespace QuickBuy.repositorio.Contexto
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //modelBuilder.Ignore<ItemPedidoConfiguration>();
+
             modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
             modelBuilder.ApplyConfiguration(new ProdutoConfiguration());
             modelBuilder.ApplyConfiguration(new PedidoConfiguration());
@@ -34,3 +36,6 @@ namespace QuickBuy.repositorio.Contexto
 
     }
 }
+
+//modelBuilder.Ignore<AuditLog>();
+//'EntityTypeBuilder.Ignore

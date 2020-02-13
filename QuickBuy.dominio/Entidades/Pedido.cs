@@ -12,14 +12,14 @@ namespace QuickBuy.dominio.Entidades
         public int UsuarioId { get; set; }
 
         public virtual Usuario Usuario { get; set; }
-        public ICollection<ItemPedido> ItensPedidos { get; set; }
+        public virtual ICollection<ItemPedido> ItensPedidos { get; set; }
         public DateTime DataPrevisaoEntrega { get; set; }
         public string CEP { get; set; }
         public string Estado { get; set; }
         public string Cidade { get; set; }
         public int NumeroEndereco { get; set; }
         public int FormaPagementoId { get; set; }
-        public FormaPagamento FormaPagamento { get; set; }
+        public virtual FormaPagamento FormaPagamento { get; set; }
 
         public override void Validate()
         {
@@ -27,11 +27,14 @@ namespace QuickBuy.dominio.Entidades
 
             if (!ItensPedidos.Any())
             {
-                AdicionarMensagem("PEDIDO NÃO PODE FICAR SEM ITENS!");
+                MyString mensagemErro= new MyString("PEDIDO NÃO PODE FICAR SEM ITENS!");
+                AdicionarMensagem(mensagemErro);
 
                 if (string.IsNullOrEmpty(CEP))
                 {
-                    AdicionarMensagem("CEP NÃO PODE FICAR VAZIO!");
+                    MyString msgErro = new MyString("PEDIDO NÃO PODE FICAR SEM ITENS!");
+
+                    AdicionarMensagem(msgErro);
                 }
             }
 

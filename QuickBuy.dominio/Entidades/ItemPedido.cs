@@ -12,7 +12,6 @@ namespace QuickBuy.dominio.Entidades
 
         public override void Validate()
         {
-            throw new NotImplementedException();
         }
     }
 }

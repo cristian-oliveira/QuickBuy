@@ -5,10 +5,10 @@ namespace QuickBuy.dominio.Entidades
 {
     public abstract class Entidade
     {
-        public List<string> _mensagensValidacao { get; set; }
-        public List<string> MensagemValidacao
+        public List<MyString> _mensagensValidacao { get; set; }
+        protected List<MyString> MensagemValidacao
         {
-            get { return _mensagensValidacao ?? (_mensagensValidacao = new List<string>()); } // Verifica se a lista mensg está vazio, e retorna uma estância, mesmo estando vazia 
+            get { return _mensagensValidacao ?? (_mensagensValidacao = new List<MyString>()); } // Verifica se a lista mensg está vazio, e retorna uma estância, mesmo estando vazia 
         }
 
         protected void LimparMensagensValidacao()
@@ -16,7 +16,7 @@ namespace QuickBuy.dominio.Entidades
             MensagemValidacao.Clear();
         }
 
-        protected void AdicionarMensagem(string mensagem)
+        protected void AdicionarMensagem(MyString mensagem)
         {
             MensagemValidacao.Add(mensagem);
         }
