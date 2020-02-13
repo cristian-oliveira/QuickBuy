@@ -1,13 +1,15 @@
 ﻿using QuickBuy.dominio.Contratos;
+using QuickBuy.repositorio.Contexto;
 using System.Collections.Generic;
 
 namespace QuickBuy.repositorio.Repositorios
 {
     public class BaseRepositorio<Entidade> : IBaseRepositorio<Entidade> where Entidade : class
     {
-        public BaseRepositorio()
+        private readonly QuickBuyContexto _quickBuyContexto;
+        public BaseRepositorio(QuickBuyContexto _quickBuyContexto)
         {
-
+            _quickBuyContexto = quickBuyContexto;
         }
         
         public void Adicionar(Entidade entidade)
