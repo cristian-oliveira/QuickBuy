@@ -1,45 +1,52 @@
 ﻿using QuickBuy.dominio.Contratos;
 using QuickBuy.repositorio.Contexto;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace QuickBuy.repositorio.Repositorios
 {
     public class BaseRepositorio<Entidade> : IBaseRepositorio<Entidade> where Entidade : class
     {
-        private readonly QuickBuyContexto _quickBuyContexto;
+        protected readonly QuickBuyContexto QuickBuyContexto;
+        private QuickBuyContexto quickBuyContexto;
+
         public BaseRepositorio(QuickBuyContexto _quickBuyContexto)
         {
-            _quickBuyContexto = quickBuyContexto;
+            QuickBuyContexto = quickBuyContexto;
         }
         
         public void Adicionar(Entidade entidade)
         {
-            throw new System.NotImplementedException();
+            QuickBuyContexto.Set<Entidade>().Add(entidade);
+            QuickBuyContexto.SaveChanges();
         }
 
         public void Atuallizar(Entidade entidade) 
         {
-            throw new System.NotImplementedException();
+            QuickBuyContexto.Set<Entidade>().Update(entidade);
+            QuickBuyContexto.SaveChanges();
+
         }
 
         public void Dispose()
         {
-            throw new System.NotImplementedException();
+            QuickBuyContexto.Dispose();
         }
 
         public Entidade ObterPorId(int id)
         {
-            throw new System.NotImplementedException();
+            return QuickBuyContexto.Set<Entidade>().Find(id);
         }
 
         public IEnumerable<Entidade> ObterTodos()
         {
-            throw new System.NotImplementedException();
+            return QuickBuyContexto.Set<Entidade>().ToList();
         }
 
         public void Remover(Entidade entidade)
         {
-            throw new System.NotImplementedException();
+            QuickBuyContexto.Remove(entidade);
+            QuickBuyContexto.SaveChanges();
         }
     }
 }
