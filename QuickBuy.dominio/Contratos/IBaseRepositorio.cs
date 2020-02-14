@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace QuickBuy.dominio.Contratos
 {
-    public interface IBaseRepositorio<Entidade> : IDisposable where Entidade : class
+    public interface IBaseRepositorio<TEntity> : IDisposable where TEntity : class
     {
-        void Adicionar(Entidade entidade);
+        void Adicionar(TEntity entidade);
 
-        Entidade ObterPorId(int id);
-        IEnumerable<Entidade> ObterTodos();
+        TEntity ObterPorId(int id);
+        IEnumerable<TEntity> ObterTodos();
 
-        void Remover(Entidade entidade);
-        void Atuallizar(Entidade entidade);
+        void Remover(TEntity entidade);
+        void Atuallizar(TEntity entidade);
     }
 }
