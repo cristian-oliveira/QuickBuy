@@ -1,7 +1,7 @@
 .form-signin{
     width: 50%;
-    max-width:420%;
-    padding: 15px;
+    max-width:300%;
+    padding: 50px;
     margin: auto;
 }
 
@@ -10,3 +10,67 @@
     border-bottom-right-radius:0px;
     border-bottom-left-radius:0px;
 }
+
+.form-signin .form-control{
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+}
+.h1{
+    margin:auto;
+    border:dashed;
+}
+.login{
+    color: darkslategray  ;
+    padding:10px;
+}
+.cor{
+    color: gray;
+}
+
+.imagem {
+  padding: 30px;
+  width: 350px;
+  height: 188.972px;
+  margin: 7.76418px 0px;
+  /*margin: initial;*/
+  /*border-width: 10px;*/
+  /*border-style:double;*/
+  /*border-color: black;*/
+}
+/*.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+    ORIGINAL IMAGEM FUNDO
+    width: 1200px;
+    height: 675px;
+
+
+    ORIGINAL IMAGEM EMBAIXO LOGIN
+    width: 433px;
+    height: 171.972px;
+    margin: 7.76418px 0px;
+}
+*/
