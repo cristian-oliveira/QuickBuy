@@ -1,4 +1,5 @@
-import { Component} from "@angular/core";
+﻿import { Component} from "@angular/core";
+import { Usuario } from "../../modelo/usuario";
 
 @Component ({
     selector: "app-login",
@@ -7,11 +8,12 @@ import { Component} from "@angular/core";
 })
 
 export class LoginComponent{
+  public usuario = new Usuario();
   public email = "";
   //public endImg = "C:/Users/Dell/Desktop/Nova pasta/QuickBuy/QuicBuy.web/ClientApp/src/assets/imgs/banner-best-buy-260nw-713290624.jpg";
   //public titulo = "Titulo adicionado";
   entrar() {
-    alert(this.email);
+    // alert();
   }
 }
 
