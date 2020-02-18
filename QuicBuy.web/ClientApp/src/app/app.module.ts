@@ -11,6 +11,7 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ProdutoCompenent } from './produto/produto.component';
 import { LoginComponent } from './usuario/login/login.component';
+import { GuardaRotas } from "./autorizacao/GuardaRotas";
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { LoginComponent } from './usuario/login/login.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'produto', component: ProdutoCompenent },
+      { path: 'produto', component: ProdutoCompenent, canActivate:[GuardaRotas] },
       { path: 'entrar', component: LoginComponent }
 
     ])
