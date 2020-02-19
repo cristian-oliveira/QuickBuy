@@ -1,4 +1,4 @@
-import { Component} from "@angular/core";
+﻿import { Component} from "@angular/core";
 import { Usuario } from "../../modelo/usuario";
 import { Router } from "@angular/router";
 
@@ -17,7 +17,7 @@ import { Router } from "@angular/router";
     }
 
     entrar() {
-      if(this.usuario.email == ""){
+      if(this.usuario.email == "cristian.oliveira@dtidigital.com.br"){
       sessionStorage.setItem("usuario-autenticado","1");
       // this.router.navigate(['/']);
       }
