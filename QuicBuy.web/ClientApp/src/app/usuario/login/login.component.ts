@@ -1,7 +1,7 @@
-﻿import { Component} from "@angular/core";
+import { Component} from "@angular/core";
 import { Usuario } from "../../modelo/usuario";
 import { Router, ActivatedRoute } from "@angular/router";
-import { UsuarioServico } from "src/app/servicos/usuario/usuario.servico";
+import { UsuarioServico } from "../../servicos/usuario/usuario.servico";
 
 @Component ({
     selector: "app-login",
@@ -27,8 +27,6 @@ import { UsuarioServico } from "src/app/servicos/usuario/usuario.servico";
 
         // }
       );
-
-      
     }
   }
 
