@@ -12,12 +12,20 @@ import { Usuario } from "../../modelo/usuario";
 export class UsuarioServico {
 
   private baseURL: string;
-  constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string {
-    this.baseURL = baseUrl;
+  constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+    this.baseURL = baseUrl; 
 
   }
 
    public verificarUsuario (usuario: Usuario): Observable<Usuario> {
-     this.http.
+    const headers = new HttpHeaders().set('content-type','applicaition/json');
+    
+    var body ={
+      email:usuario.email,
+      senha:usuario.senha
+    }
+    
+    
+    return this.http.post<Usuario>(this.baseURL + "api/usuario", body, { headers })//BASEURL indica a raiz do site
   }
 }

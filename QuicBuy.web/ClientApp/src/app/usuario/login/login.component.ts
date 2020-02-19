@@ -1,6 +1,7 @@
 ﻿import { Component} from "@angular/core";
 import { Usuario } from "../../modelo/usuario";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
+import { UsuarioServico } from "src/app/servicos/usuario/usuario.servico";
 
 @Component ({
     selector: "app-login",
@@ -11,17 +12,23 @@ import { Router } from "@angular/router";
   export class LoginComponent{
     public usuario;
 
-    constructor(private router: Router) {
+    constructor(private router: Router, private activatedRouter: ActivatedRoute, private usuarioServico: UsuarioServico) {
         this.usuario = new Usuario();
       
     }
 
     entrar() {
-      if(this.usuario.email == "cristian.oliveira@dtidigital.com.br"){
-      sessionStorage.setItem("usuario-autenticado","1");
-      // this.router.navigate(['/']);
-      }
+      this.usuarioServico.verificarUsuario(this.usuario)
+      .subscribe(
+        data=> {
 
+        }
+        // error =>{
+
+        // }
+      );
+
+      
     }
   }
 
