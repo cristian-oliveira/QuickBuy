@@ -20,10 +20,12 @@ export class LoginComponent implements OnInit {
   }
   entrar() {
     this.usuarioServico.verificarUsuario(this.usuario)
-      .subscribe(data => {
+      .subscribe(
+        usuario_json => {
 
         var usuarioRetorno: Usuario; //linha executada em execucao sem erros
-        usuarioRetorno = data;
+        this.usuarioServico.usuario = usuario_json
+        // usuarioRetorno = usuario_json;
 
         // sessionStorage.setItem("usuario-autenticado", "1");
         // this.usuarioServico.usuario =  usuario_json;

@@ -23,13 +23,12 @@ export class NavMenuComponent {
     this.isExpanded = !this.isExpanded;
   }
   public usuarioLogado() : boolean {
-
-      return sessionStorage.getItem("usuario-autenticado") == "1";
+      return this.usuarioServico.usuario_autenticado();
   }
   
 
   sair(){
-    sessionStorage.setItem("usuario-autenticado", "");
+    this.usuarioServico.limpar_sessao();
     this.router.navigate(['/']);
   }
 }
