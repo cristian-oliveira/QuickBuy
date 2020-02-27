@@ -16,9 +16,10 @@
       #email="ngModel"
       email
       required/>
-      <div class="invalid-feedback mb-2" *ngIf="email.invalid && (email.dirty || email.touched)">
-        <div *ngIf="email.errors.required">Preenchimento obrigatório</div>
-        <div *ngIf="email.errors.email">Formato incorreto de email</div>
+
+      <div class="invalid-feedback mb-2">
+        <div *ngIf="email.errors && email.errors.required">Preenchimento obrigatório</div>
+        <div *ngIf="email.errors && email.errors.email">Formato incorreto de email</div>
       </div>
 
     <label for="inputSenha" class="sr-only">Senha</label>
@@ -36,13 +37,20 @@
       required 
       #senha ="ngModel"
       required/>
-      <div class="invalid-feedback mb-2" *ngIf="senha.invalid && (senha.dirty || senha.touched)">
-        <div *ngIf="senha.errors.required">Preenchimento obrigatório</div>
-       </div>
+
+      <div class="invalid-feedback mb-2" >       
+        <div *ngIf="senha.errors && senha.errors.required">Preenchimento obrigatório</div>
+      </div>
 
     <button class="btn btn-primary btn-block " type="submit" (click)="entrar()">Entrar</button>
+
+    <div class="alert alert-danger" *ngIf="mensagem">
+      {{ mensagem}}
+    </div>
+
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Best_Buy_logo_2018.svg/1200px-Best_Buy_logo_2018.svg.png" class=" imagem"/>
     <!--<img src="C:/Users/Dell/Desktop/Nova pasta/QuickBuy/QuicBuy.web/ClientApp/src/assets/imgs/1200px-Best_Buy_logo_2018.svg.png" class="imagem" />-->
+ 
   </form>
 </div>
 

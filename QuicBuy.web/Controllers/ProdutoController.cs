@@ -4,10 +4,11 @@ using QuickBuy.dominio.Contratos;
 using QuickBuy.dominio.Entidades;
 using QuickBuy.repositorio.Repositorios;
 using System;
+using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 
 namespace QuicBuy.web.Controllers
 {
-    [Microsoft.AspNetCore.Mvc.Route("api/[Controller]")]
+    [Route("api/[Controller]")]
     public class ProdutoController : Controller
     {
         private readonly IProdutoRepositorio _produtoRepositorio;

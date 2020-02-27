@@ -1,16 +1,15 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
+using QuickBuy.dominio.DataObject;
 using QuickBuy.dominio.Entidades;
 using System;
 
-namespace QuickBuy.Web.Controllers
+namespace QuickBuy.web.Controllers
 {
     [Route("api/[Controller]")]
 
     public class UsuarioController : Controller
     {
-
-
         [HttpGet]
         public ActionResult Get()
         {
@@ -25,8 +24,8 @@ namespace QuickBuy.Web.Controllers
 
 
         }
-        [HttpPost("VerificarUsuario")]
-        public ActionResult VerificarUsuario([FromBody] Usuario usuario)
+        [HttpPost("verificarUsuario")]
+        public ActionResult VerificarUsuario([FromBody] UsuarioDto usuario)
         {
             try
             {
@@ -41,7 +40,7 @@ namespace QuickBuy.Web.Controllers
             {
                 return BadRequest(ex.ToString());
             }
-        
+
         }
 
         [HttpPost]
