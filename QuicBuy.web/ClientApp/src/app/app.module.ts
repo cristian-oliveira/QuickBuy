@@ -13,6 +13,7 @@ import { ProdutoCompenent } from './produto/produto.component';
 import { LoginComponent } from './usuario/login/login.component';
 import { GuardaRotas } from "./autorizacao/GuardaRotas";
 import { UsuarioServico } from './servicos/usuario/usuario.servico';
+import { CadastroUsuarioComponent } from './usuario/cadastro/cadastro.usuario.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { UsuarioServico } from './servicos/usuario/usuario.servico';
     CounterComponent,
     FetchDataComponent,
     ProdutoCompenent,
-    LoginComponent
+    LoginComponent,
+    CadastroUsuarioComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -31,10 +33,11 @@ import { UsuarioServico } from './servicos/usuario/usuario.servico';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+      // { path: 'counter', component: CounterComponent },
+      // { path: 'fetch-data', component: FetchDataComponent },
       { path: 'produto', component: ProdutoCompenent, canActivate:[GuardaRotas] },
-      { path: 'entrar', component: LoginComponent }
+      { path: 'entrar', component: LoginComponent },
+      { path: 'novo-usuario', component:CadastroUsuarioComponent  }
 
     ])
   ],
