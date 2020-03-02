@@ -45,7 +45,7 @@ export class UsuarioServico {
       email:usuario.email,
       senha:usuario.senha
     }
-    return this.http.post<Usuario>("https://localhost:44305/api/Usuario/verificarUsuario", usuario, { headers });//BASEURL indica a raiz do site
+    return this.http.post<Usuario>(this.baseURL + "api/Usuario/verificarUsuario", usuario, { headers });//BASEURL indica a raiz do site
    
   }
 
@@ -60,7 +60,7 @@ export class UsuarioServico {
       sobreNome:this.usuario.sobreNome,
     }
 
-    return this.http.post<Usuario>("https://localhost:44305/api/Usuario",body);
+    return this.http.post<Usuario>(this.baseURL + "api/Usuario",body);
 
   }
 

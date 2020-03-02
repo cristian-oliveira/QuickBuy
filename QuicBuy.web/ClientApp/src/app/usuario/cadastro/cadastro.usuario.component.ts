@@ -14,7 +14,6 @@ export class CadastroUsuarioComponent implements OnInit{
     public returnUrl: string;
     constructor(private usuarioServico: UsuarioServico) {
     
-    
     }
 
     ngOnInit(): void {

@@ -8,9 +8,6 @@ using System;
 namespace QuickBuy.web.Controllers
 {
     [Route("api/[Controller]")]
-
-
-
     public class UsuarioController : Controller
     {
         private readonly IUsuarioRepositorio _usuarioRepositorio;
