@@ -10,13 +10,14 @@ namespace QuickBuy.repositorio.Repositorios
 {
     public class UsuarioRepositorio : BaseRepositorio<Usuario>, IUsuarioRepositorio
     {
+        private QuickBuyContexto quickBuyContexto;
         public UsuarioRepositorio(QuickBuyContexto quickBuyContexto) : base(quickBuyContexto)
         {
-
+            this.quickBuyContexto = quickBuyContexto;
         }
-        Usuario IUsuarioRepositorio.Obter(string email, string senha)
+        public Usuario Obter(string email, string senha)
         {
-            return QuickBuyContexto.Usuarios.FirstOrDefault(user => user.Email == email && user.Senha == senha);
+            return quickBuyContexto.Set<Usuario>().FirstOrDefault(user => user.Email == email && user.Senha == senha);
         }
     }
 }

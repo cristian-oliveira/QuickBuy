@@ -60,9 +60,7 @@ export class UsuarioServico {
       sobreNome:this.usuario.sobreNome,
     }
 
-    return this.http.post<Usuario>(this.baseURL +"api/usuario,",body);
-
-
+    return this.http.post<Usuario>("https://localhost:44305/api/Usuario",body);
 
   }
 
