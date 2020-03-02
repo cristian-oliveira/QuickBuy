@@ -27,7 +27,7 @@ export class CadastroUsuarioComponent implements OnInit{
             usuarioJson =>{
                 var usuarioRetorno: Usuario; //linha executada em execucao sem erros
                 this.usuarioServico.usuario = usuarioJson
-                this.router.navigate([this.returnUrl]);       
+                // this.router.navigate([this.returnUrl]);       
              }
                 ,err =>{
                     console.log(err.error);
