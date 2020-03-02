@@ -1,10 +1,86 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
+﻿<div class="text-center">
+    <form class="form-signin">
+      <h1 class="h2 mb-2 login">CRIAR CONTA</h1>
+      
+      <label for="inputEmail" class="sr-only">Nome</label>
+        <input 
+            type="nome" 
+            id="inputNome" 
+            name="nome" 
+            placeholder="Nome" 
+            class="form-control mb-2"
+            [(ngModel)]="usuario.nome"
+            #nome="ngModel"
+            nome
+            required/>
+            <div class="invalid-feedback mb-2">
+                <div *ngIf="nome.errors && nome.errors.required">Preenchimento obrigatório</div>
+            </div>
 
-</body>
-</html>
+            <label for="inputEmail" class="sr-only">SobreNome</label>
+            <input 
+            type="sobrenome" 
+            id="inputSobrenome" 
+            name="sobrenome" 
+            placeholder="Sobrenome" 
+            class="form-control mb-2"
+            [(ngModel)]="usuario.sobrenome"
+            #sobrenome="ngModel"
+            sobrenome
+            required />
+            <div class="invalid-feedback mb-2">
+                <div *ngIf="sobrenome.errors && sobrenome.errors.required">Preenchimento obrigatório</div>
+            </div>
+              
+      <label for="inputEmail" class="sr-only">Email</label>
+      <input 
+        type="email" 
+        id="inputEmail" 
+        name="email" 
+        placeholder="Email" 
+        class="form-control mb-2"
+        [ngClass] ="{
+         'is-invalid':email.invalid && (email.dirty || email.touched),
+         'is-valid': email.valid && (email.dirty || email.touched)
+        }"
+        [(ngModel)]="usuario.email"
+        #email="ngModel"
+        email
+        required/>
+  
+        <div class="invalid-feedback mb-2">
+          <div *ngIf="email.errors && email.errors.required">Preenchimento obrigatório</div>
+          <div *ngIf="email.errors && email.errors.email">Formato incorreto de email</div>
+        </div>
+
+        <label for="inputSenha" class="sr-only">Senha</label>
+        <input 
+            type="password" 
+            id="inputSenha" 
+            name="senha" 
+            placeholder="Senha"
+            class="form-control mb-2" 
+            [ngClass] ="{
+            'is-invalid':senha.invalid && (senha.dirty || senha.touched),
+            'is-valid': senha.valid && (senha.dirty || senha.touched)
+            }"
+            [(ngModel)]="usuario.senha"
+            required 
+            #senha ="ngModel"
+            required/>
+    
+            <div class="invalid-feedback mb-2" >       
+            <div *ngIf="senha.errors && senha.errors.required">Preenchimento obrigatório</div>
+            </div>
+    
+        <button class="btn btn-primary btn-block botao" type="submit" (click)="cadastrar()">Cadastrar</button>
+    
+        <div class="alert alert-danger" *ngIf="mensagem">ERRO AO REALIZAR CADASTRO</div>
+        <a [routerLink]="['/entrar']" >Voltar à tela de Login</a>
+    
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Best_Buy_logo_2018.svg/1200px-Best_Buy_logo_2018.svg.png" class=" imagem"/>
+        <!--<img src="C:/Users/Dell/Desktop/Nova pasta/QuickBuy/QuicBuy.web/ClientApp/src/assets/imgs/1200px-Best_Buy_logo_2018.svg.png" class="imagem" />-->
+    
+        </form>
+    </div>
+    

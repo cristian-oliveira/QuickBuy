@@ -10,7 +10,8 @@ import { UsuarioServico } from "src/app/servicos/usuario/usuario.servico";
 
 export class CadastroUsuarioComponent implements OnInit{
     public usuario: Usuario; 
-
+    public mensagem: string;
+    public returnUrl: string;
     constructor(private usuarioServico: UsuarioServico) {
     
     
@@ -21,13 +22,16 @@ export class CadastroUsuarioComponent implements OnInit{
     }
     
     public cadastrar(){
-        this.usuarioServico.cadastrarUsuario(this.usuario);
-            .subscribe(
-                usuarioJson =>{
-                    
-                }
-                err =>{
-
+        this.usuarioServico.cadastrarUsuario(this.usuario)
+        .subscribe(
+            usuarioJson =>{
+                var usuarioRetorno: Usuario; //linha executada em execucao sem erros
+                this.usuarioServico.usuario = usuarioJson
+                this.router.navigate([this.returnUrl]);       
+             }
+                ,err =>{
+                    console.log(err.error);
+                    this.mensagem = err.error;
                 }
             );
     }

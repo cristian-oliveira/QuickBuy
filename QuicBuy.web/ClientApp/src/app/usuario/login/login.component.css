@@ -40,6 +40,13 @@
   /*border-style:double;*/
   /*border-color: black;*/
 }
+
+.botao{
+  margin-top: 10px;
+  margin-bottom: 10px
+}
+
+
 /*.form-signin .checkbox {
   font-weight: 400;
 }

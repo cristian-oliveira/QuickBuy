@@ -34,7 +34,6 @@
         'is-valid': senha.valid && (senha.dirty || senha.touched)
       }"
       [(ngModel)]="usuario.senha"
-      required 
       #senha ="ngModel"
       required/>
 
@@ -42,11 +41,10 @@
         <div *ngIf="senha.errors && senha.errors.required">Preenchimento obrigatório</div>
       </div>
 
-    <button class="btn btn-primary btn-block " type="submit" (click)="entrar()">Entrar</button>
+    <button class="btn btn-primary btn-block botao" type="submit" (click)="entrar()">Entrar</button>
+    <div><a [routerLink] = "['/novo-usuario']">Cadastre-se</a></div>
 
-    <div class="alert alert-danger" *ngIf="mensagem">
-      {{ mensagem}}
-    </div>
+    <div class="alert alert-danger" *ngIf="mensagem">Erro ao logar</div>
 
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Best_Buy_logo_2018.svg/1200px-Best_Buy_logo_2018.svg.png" class=" imagem"/>
     <!--<img src="C:/Users/Dell/Desktop/Nova pasta/QuickBuy/QuicBuy.web/ClientApp/src/assets/imgs/1200px-Best_Buy_logo_2018.svg.png" class="imagem" />-->

@@ -27,13 +27,8 @@ export class LoginComponent implements OnInit {
         this.usuarioServico.usuario = usuario_json
         // usuarioRetorno = usuario_json;
 
-        // sessionStorage.setItem("usuario-autenticado", "1");
-        // this.usuarioServico.usuario =  usuario_json;
-
-        // sessionStorage.setItem("email-usuario", usuarioRetorno.email);
-
-
         this.router.navigate([this.returnUrl]);
+      
       }, err => {
         console.log(err.error);
         this.mensagem = err.error;
