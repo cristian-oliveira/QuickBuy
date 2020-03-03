@@ -1,5 +1,33 @@
-<html>
-<body>
-  {{ obterNome() }}
-</body>
-</html>
+<h1 class="h4"> Cadastro do Produto</h1>
+
+<input type="text" id="inputNome"
+        name="inputNome"
+        placeholder="Nome do Produto"
+        class="form-control mb-3 col-md-4"
+        [(ngModel)] = "produto.nome"
+        #nome="ngModel"
+        required/>
+
+<input type="text" id="inputDescricao"
+        name="descricaoProduto"
+        placeholder="Descrição do Produto"
+        class="form-control mb-3 col-md-4"
+        [(ngModel)] = "produto.Descricao"
+        #descricao="ngModel"
+        required/>
+
+<input type="text" id="inputPreco"
+        name="PrecoProduto"
+        placeholder="Preco do Produto"
+        class="form-control mb-3 col-md-2"
+        [(ngModel)] = "produto.preco"
+        #preco="ngModel"
+        required/>
+
+<div class="input-gorup">
+  <div class="custom-fie col-md-3">
+    <input type="file" class="custom-file-input" id="inputFile"/>
+    <label for="inputFile" class="custom-file-label">Escolher Foto</label>
+  </div>
+</div>
+<button class= "btn btn-primary botaoCadProduto" (click)="cadastrar()">Cadastrar</button>

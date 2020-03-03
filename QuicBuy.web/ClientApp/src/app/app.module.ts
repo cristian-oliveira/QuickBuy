@@ -36,7 +36,7 @@ import { ProdutoServico } from './servicos/produto/produto.servico';
       // { path: '', component: HomeComponent, pathMatch: 'full' },
       // { path: 'counter', component: CounterComponent },
       // { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'produto', component: ProdutoCompenent, canActivate:[GuardaRotas] },
+      { path: 'produto', component: ProdutoCompenent},
       { path: 'entrar', component: LoginComponent },
       { path: 'novo-usuario', component:CadastroUsuarioComponent  }
 
@@ -46,3 +46,4 @@ import { ProdutoServico } from './servicos/produto/produto.servico';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+// { path: 'produto', component: ProdutoCompenent, canActivate:[GuardaRotas] },
