@@ -36,9 +36,9 @@ namespace QuicBuy.web.Controllers
         {
             try
             {
-                //produto.Nome = "";
                 _produtoRepositorio.Adicionar(produto);
                 return Created("api/produto", produto); // retorna se conseguiu criar produto
+            
             }catch (Exception ex)
             {
                 return BadRequest(ex.Message);

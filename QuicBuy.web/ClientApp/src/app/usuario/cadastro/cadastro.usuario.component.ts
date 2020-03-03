@@ -11,9 +11,9 @@ import { UsuarioServico } from "src/app/servicos/usuario/usuario.servico";
 export class CadastroUsuarioComponent implements OnInit{
     public usuario: Usuario; 
     public mensagem: string;
-    public returnUrl: string;
+    public usuarioCadastrado: boolean;
+
     constructor(private usuarioServico: UsuarioServico) {
-    
     }
 
     ngOnInit(): void {
@@ -24,14 +24,14 @@ export class CadastroUsuarioComponent implements OnInit{
         this.usuarioServico.cadastrarUsuario(this.usuario)
         .subscribe(
             usuarioJson =>{
-                var usuarioRetorno: Usuario; //linha executada em execucao sem erros
-                this.usuarioServico.usuario = usuarioJson
-                // this.router.navigate([this.returnUrl]);       
+                this.usuarioCadastrado = true;
+                this.mensagem="";
              }
-                ,err =>{
-                    console.log(err.error);
-                    this.mensagem = err.error;
-                }
+            ,err =>{
+                console.log(err.error);
+                this.mensagem = err.error;
+
+            }
             );
     }
 }
