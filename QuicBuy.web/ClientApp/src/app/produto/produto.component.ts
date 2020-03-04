@@ -19,7 +19,7 @@ export class ProdutoCompenent implements OnInit{
   ngOnInit(){
     this.produto = new Produto();
   }
-  public inputCharge(files: FileList){
+  public inputChange(files: FileList){
       this.arquivoSelecionado = files.item(0);
       this.produtoServico.enviarArquivo(this.arquivoSelecionado)
         .subscribe(

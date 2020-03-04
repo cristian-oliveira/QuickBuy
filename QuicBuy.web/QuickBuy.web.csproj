@@ -36,6 +36,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\arquivos\WIN_202002.System.String[]" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="ClientApp\src\app\autorizacao\guarda.rotas.ts" />
     <None Remove="ClientApp\src\app\counter\counter.component.html" />
     <None Remove="ClientApp\src\app\counter\counter.component.spec.ts" />
@@ -67,6 +71,10 @@
     <Content Update="config.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\arquivos\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

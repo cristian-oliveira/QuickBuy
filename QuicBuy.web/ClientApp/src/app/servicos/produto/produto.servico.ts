@@ -41,7 +41,8 @@ export class ProdutoServico {
     public enviarArquivo(arquivoSelecionado: File) : Observable<boolean>{
         const formData: FormData = new FormData();
         formData.append("arquivoEnviado",arquivoSelecionado,arquivoSelecionado.name);
-        return this.http.post<boolean>("localhost:44305/api/Produto/enviarArquivo",formData);
+        return this.http.post<boolean>("https://localhost:44305/api/Produto/enviarArquivo",formData);
+        
       }
 
 }
