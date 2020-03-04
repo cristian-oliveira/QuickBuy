@@ -37,6 +37,8 @@
 
   <ItemGroup>
     <Content Remove="wwwroot\arquivos\WIN_202002.System.String[]" />
+    <Content Remove="wwwroot\arquivos\WIN_202002_20203415228.jpg" />
+    <Content Remove="wwwroot\arquivos\WIN_202002_20203415910.jpg" />
   </ItemGroup>
 
   <ItemGroup>

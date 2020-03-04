@@ -38,11 +38,11 @@ export class ProdutoServico {
     public obterProduto(): Observable<Produto>{ 
         return this.http.get<Produto>(this._baseUrl + "/api/produto/obter");
     }
-    public enviarArquivo(arquivoSelecionado: File) : Observable<boolean>{
+    public enviarArquivo(arquivoSelecionado: File) : Observable<string>{
         const formData: FormData = new FormData();
         formData.append("arquivoEnviado",arquivoSelecionado,arquivoSelecionado.name);
-        return this.http.post<boolean>("https://localhost:44305/api/Produto/enviarArquivo",formData);
-        
+        return this.http.post<string>("https://localhost:44305/api/Produto/enviarArquivo",formData);
+
       }
 
 }

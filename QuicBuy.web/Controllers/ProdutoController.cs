@@ -70,7 +70,7 @@ namespace QuicBuy.web.Controllers
                 {
                     formFile.CopyTo(streamArquivo);
                 }
-                return Ok("Usuario enviado");
+                return Json(novoNomeArquivo);
 
             }
             catch (Exception ex)

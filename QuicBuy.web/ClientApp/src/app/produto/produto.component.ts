@@ -23,8 +23,10 @@ export class ProdutoCompenent implements OnInit{
       this.arquivoSelecionado = files.item(0);
       this.produtoServico.enviarArquivo(this.arquivoSelecionado)
         .subscribe(
-          retorno => {
-            console.log(retorno);
+          nomeArquivo => {
+            this.produto.nomeArquivo = nomeArquivo;
+            alert(this.produto.nomeArquivo);
+            console.log(nomeArquivo);
           },e => {
             console.log();
           }
