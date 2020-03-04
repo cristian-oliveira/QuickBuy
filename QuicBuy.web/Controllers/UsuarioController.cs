@@ -71,7 +71,7 @@ namespace QuickBuy.web.Controllers
 
         }
 
-        [HttpPost]
+    [HttpPost]
         public ActionResult Post()
         {
             try

@@ -3,13 +3,12 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Produto } from "src/app/modelo/produto";
 
-
-
 @Injectable({
     providedIn: "root"
 })
 
 export class ProdutoServico {
+  
     private _baseUrl: string;
     public produtos: Produto[];
 
@@ -39,5 +38,10 @@ export class ProdutoServico {
     public obterProduto(): Observable<Produto>{ 
         return this.http.get<Produto>(this._baseUrl + "/api/produto/obter");
     }
+    public enviarArquivo(arquivoSelecionado: File) : Observable<boolean>{
+        const formData: FormData = new FormData();
+        formData.append("arquivoEnviado",arquivoSelecionado,arquivoSelecionado.name);
+        return this.http.post<boolean>("localhost:44305/api/Produto/enviarArquivo",formData);
+      }
 
 }

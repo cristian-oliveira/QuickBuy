@@ -10,6 +10,7 @@ import { Produto } from "../modelo/produto";
 })
 export class ProdutoCompenent implements OnInit{
   public produto: Produto; 
+  arquivoSelecionado: File;
 
   constructor(private produtoServico: ProdutoServico) {
    
@@ -17,6 +18,18 @@ export class ProdutoCompenent implements OnInit{
 
   ngOnInit(){
     this.produto = new Produto();
+  }
+  public inputCharge(files: FileList){
+      this.arquivoSelecionado = files.item(0);
+      this.produtoServico.enviarArquivo(this.arquivoSelecionado)
+        .subscribe(
+          retorno => {
+            console.log(retorno);
+          },e => {
+            console.log();
+          }
+        );
+
   }
 
   public cadastrar(){
