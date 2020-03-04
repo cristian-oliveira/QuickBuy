@@ -1,6 +1,6 @@
 ﻿import { Component, OnInit } from "@angular/core";
+import { UsuarioServico } from "../../servicos/usuario/usuario.servico";
 import { Usuario } from "src/app/modelo/usuario";
-import { UsuarioServico } from "src/app/servicos/usuario/usuario.servico";
 
 @Component ({
     selector: "cadastro-usuario",
@@ -20,18 +20,18 @@ export class CadastroUsuarioComponent implements OnInit{
         this.usuario = new Usuario();
     }
     
-    public cadastrar(){
+    cadastrar(){
         this.usuarioServico.cadastrarUsuario(this.usuario)
         .subscribe(
+            
             usuarioJson =>{
+                this.usuarioServico.usuario = usuarioJson;  
                 this.usuarioCadastrado = true;
                 this.mensagem="";
-             }
-            ,err =>{
+                console.log(this.usuario.email + this.usuario.senha +this.usuario.nome + this.usuario.sobreNome);
+            },err =>{
                 console.log(err.error);
                 this.mensagem = err.error;
-
-            }
-            );
+            });
     }
 }

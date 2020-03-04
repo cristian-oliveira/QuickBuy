@@ -24,7 +24,7 @@
             name="sobrenome" 
             placeholder="Sobrenome" 
             class="form-control mb-2"
-            [(ngModel)]="usuario.sobrenome"
+            [(ngModel)]="usuario.sobreNome"
             #sobrenome="ngModel"
             sobrenome
             required />
@@ -73,7 +73,7 @@
             <div *ngIf="senha.errors && senha.errors.required">Preenchimento obrigatório</div>
             </div>
     
-        <button class="btn btn-primary btn-block botao" type="submit" (click)="cadastrar()">Cadastrar</button>
+            <button class="btn btn-primary btn-block botao" type="submit" (click)="cadastrar()">Cadastre-se</button>
     
         <div><a [routerLink]="['/entrar']" >Voltar à tela de Login</a></div>
         

@@ -11,7 +11,7 @@ namespace QuickBuy.web.Controllers
     public class UsuarioController : Controller
     {
         private readonly IUsuarioRepositorio _usuarioRepositorio;
-        public UsuarioController (IUsuarioRepositorio usuarioRepositorio)
+        public UsuarioController(IUsuarioRepositorio usuarioRepositorio)
         {
             _usuarioRepositorio = usuarioRepositorio;
         }
@@ -37,7 +37,7 @@ namespace QuickBuy.web.Controllers
             {
                 var usuarioRetorno = _usuarioRepositorio.Obter(usuario.Email, usuario.Senha);
 
-                if (usuarioRetorno!= null)
+                if (usuarioRetorno != null)
                 {
                     return Ok(usuarioRetorno);
                 }
@@ -51,8 +51,8 @@ namespace QuickBuy.web.Controllers
 
         }
 
-        [HttpPost]
-        public ActionResult Post([FromBody] Usuario usuario)
+        [HttpPost("cadastrarUsuario")]
+        public ActionResult CadastrarUsuario([FromBody] Usuario usuario)
         {
             try
             {
@@ -69,6 +69,19 @@ namespace QuickBuy.web.Controllers
                 return BadRequest(ex.ToString());
             }
 
+        }
+
+        [HttpPost]
+        public ActionResult Post()
+        {
+            try
+            {
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
         }
     }
 }

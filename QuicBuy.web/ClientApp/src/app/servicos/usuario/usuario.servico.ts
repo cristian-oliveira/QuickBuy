@@ -45,7 +45,7 @@ export class UsuarioServico {
       email:usuario.email,
       senha:usuario.senha
     }
-    return this.http.post<Usuario>(this.baseURL + "api/Usuario/verificarUsuario", usuario, { headers });//BASEURL indica a raiz do site
+    return this.http.post<Usuario>(this.baseURL + "api/Usuario/verificarUsuario", body, { headers });//BASEURL indica a raiz do site
    
   }
 
@@ -54,13 +54,14 @@ export class UsuarioServico {
     const headers = new HttpHeaders().set('content-type','application/json');
 
     var body ={
-      email:this.usuario.email,
-      senha:this.usuario.senha,
-      nome:this.usuario.nome,
-      sobreNome:this.usuario.sobreNome,
+      nome:usuario.nome,
+      sobreNome:usuario.sobreNome,
+      email:usuario.email,
+      senha:usuario.senha,
+
     }
 
-    return this.http.post<Usuario>(this.baseURL + "api/Usuario",body);
+    return this.http.post<Usuario>("https://localhost:44305/api/Usuario/cadastrarUsuario",body,{headers});
 
   }
 

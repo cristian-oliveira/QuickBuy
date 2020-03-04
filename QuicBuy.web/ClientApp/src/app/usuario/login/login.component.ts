@@ -8,27 +8,31 @@ import { UsuarioServico } from "../../servicos/usuario/usuario.servico";
   styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit {
-  ngOnInit() {
+  ngOnInit(): void {
     this.returnUrl = this.activatedRouter.snapshot.queryParams['returnUrl'];
     this.usuario = new Usuario();
   }
   public usuario;
   public returnUrl: string;
   public mensagem: string;
+
   constructor(private router: Router, private activatedRouter: ActivatedRoute, private usuarioServico: UsuarioServico) {
-    this.usuario = new Usuario();
   }
+
   entrar() {
     this.usuarioServico.verificarUsuario(this.usuario)
       .subscribe(
         usuario_json => {
 
         var usuarioRetorno: Usuario; //linha executada em execucao sem erros
-        this.usuarioServico.usuario = usuario_json
+        this.usuarioServico.usuario = usuario_json;
         // usuarioRetorno = usuario_json;
 
-        this.router.navigate([this.returnUrl]);
-      
+        if (this.returnUrl == null) {
+          this.router.navigate(['/']);
+        } else {
+          this.router.navigate([this.returnUrl]);
+        }      
       }, err => {
         console.log(err.error);
         this.mensagem = err.error;
