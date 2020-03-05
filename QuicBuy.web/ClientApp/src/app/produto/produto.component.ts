@@ -11,7 +11,7 @@ import { Produto } from "../modelo/produto";
 export class ProdutoCompenent implements OnInit{
   public produto: Produto; 
   arquivoSelecionado: File;
-
+  public mensagem: string;
   constructor(private produtoServico: ProdutoServico) {
    
   }  
@@ -36,15 +36,16 @@ export class ProdutoCompenent implements OnInit{
 
   public cadastrar(){
     this.produtoServico.cadastrar(this.produto)
-    // .subscribe(
-    //   produtoJson =>{
-    //     console.log(produtoJson);
-    //     // this.router.navigate(['/pesquisar-produto']);
-    //   },
-    //   e => {
-    //     console.log(e.error);
-    //   }
-    // );
+    .subscribe(
+      produtoJson =>{
+        console.log(produtoJson);
+        // this.router.navigate(['/pesquisar-produto']);
+      },
+      e => {
+        console.log(e.error);
+        this.mensagem = e.error;
+      }
+    );
     
 
   }

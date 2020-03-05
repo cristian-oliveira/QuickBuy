@@ -1,7 +1,7 @@
-﻿import { Injectable, Inject} from "@angular/core"
+import { Injectable, Inject } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { Produto } from "src/app/modelo/produto";
+import { Produto } from "../../modelo/produto";
 
 @Injectable({
     providedIn: "root"
@@ -18,7 +18,7 @@ export class ProdutoServico {
     
     public cadastrar(produto: Produto): Observable<Produto>{   
         const headers = new HttpHeaders().set('content-type','application/json');
-        return this.http.post<Produto>(this._baseUrl + "/api/produto/cadastrar", produto, { headers });//BASEURL indica a raiz do site
+        return this.http.post<Produto>("https://localhost:44305/api/Produto", JSON.stringify(produto), { headers });//BASEURL indica a raiz do site
     }
 
     public salvar(produto: Produto): Observable<Produto>{   

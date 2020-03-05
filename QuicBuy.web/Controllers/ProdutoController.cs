@@ -44,6 +44,11 @@ namespace QuicBuy.web.Controllers
         {
             try
             {
+                produto.Validate();
+                if (!produto.Validade)
+                {
+                    return BadRequest(produto.ObterMensagemValidacao());
+                }
                 _produtoRepositorio.Adicionar(produto);
                 return Created("api/produto", produto); // retorna se conseguiu criar produto
             

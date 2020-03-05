@@ -27,14 +27,11 @@ namespace QuickBuy.dominio.Entidades
 
             if (!ItensPedidos.Any())
             {
-                MyString mensagemErro= new MyString("PEDIDO NÃO PODE FICAR SEM ITENS!");
-                AdicionarMensagem(mensagemErro);
+                AdicionarMensagem("PEDIDO NÃO PODE FICAR SEM ITENS!");
 
                 if (string.IsNullOrEmpty(CEP))
                 {
-                    MyString msgErro = new MyString("PEDIDO NÃO PODE FICAR SEM ITENS!");
-
-                    AdicionarMensagem(msgErro);
+                    AdicionarMensagem("PEDIDO NÃO PODE FICAR SEM ITENS!");
                 }
             }
 
