@@ -24,14 +24,16 @@ namespace QuickBuy.dominio.Entidades
         public override void Validate()
         {
             LimparMensagensValidacao();
-
+            
             if (!ItensPedidos.Any())
             {
-                AdicionarMensagem("PEDIDO NÃO PODE FICAR SEM ITENS!");
+                MyString mensagemErro = new MyString("PEDIDO NÃO PODE FICAR SEM ITENS!");
+                AdicionarMensagem(mensagemErro);
 
                 if (string.IsNullOrEmpty(CEP))
                 {
-                    AdicionarMensagem("PEDIDO NÃO PODE FICAR SEM ITENS!");
+                    MyString msgErro = new MyString("PEDIDO NÃO PODE FICAR SEM ITENS!");
+                    AdicionarMensagem(msgErro);
                 }
             }
 

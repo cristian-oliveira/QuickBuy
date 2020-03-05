@@ -10,7 +10,7 @@ namespace QuickBuy.repositorio.Config
         {
             builder.HasKey(produto => produto.Id);
             builder.Property(produto => produto.Nome).IsRequired().HasMaxLength(50);
-            builder.Property(produto => produto.Preco).IsRequired();
+            builder.Property(produto => produto.Preco).HasColumnType("decimal").IsRequired().HasMaxLength(13);
             builder.Property(produto => produto.Descricao).IsRequired().HasMaxLength(500);
             //builder.Property(usuario => usuario.Pedidos).IsRequired().HasMaxLength(500);
 

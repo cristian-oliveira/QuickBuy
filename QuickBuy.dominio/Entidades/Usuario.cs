@@ -17,7 +17,8 @@ namespace QuickBuy.dominio.Entidades
         {
             if (string.IsNullOrEmpty(Email))
             {
-                AdicionarMensagem("PEDIDO NÃO PODE FICAR SEM ITENS!");
+                MyString mensagemErro = new MyString("PEDIDO NÃO PODE FICAR SEM ITENS!");
+                AdicionarMensagem(mensagemErro);
             }
 
 
